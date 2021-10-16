@@ -2,7 +2,7 @@
   "name": "test_rendalo",
   "version": "1.0.0",
   "description": "A little test to rendalo",
-  "main": "dist/server.js",
+  "main": "dist/main.js",
   "scripts": {
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc",
