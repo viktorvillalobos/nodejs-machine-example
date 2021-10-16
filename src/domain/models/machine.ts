@@ -9,7 +9,7 @@ class Machine {
         this.markup = markup
     }
 
-    FullPrice (): number  {
+    fullPrice (): number  {
         return this.price * this.markup
     }
 }
