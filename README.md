@@ -20,7 +20,7 @@ This is an example in how to use a simple version of Clean Arquitecture to organ
 Clone the repository from GitHub.
 
 ```
-$ git clone https://github.com/viktorvillalobos/TODO.git
+$ git clone https://github.com/viktorvillalobos/nodejs-machine-example
 ```
 
 ### Run the project
@@ -105,7 +105,7 @@ Response:
 This endpoint return a list of Machines using a simple InMemory DB.
 
 ```http
-GET http://localhost:3000/inmemory/machines HTTP/1.1
+GET http://localhost:3000/postgres/machines HTTP/1.1
 Content-type: application/json;
 
 Response:
@@ -124,7 +124,7 @@ Response:
 This endpoint create a Machine
 
 ```http
-POST http://localhost:3000/inmemory/machines HTTP/1.1
+POST http://localhost:3000/postgres/machines HTTP/1.1
 Content-type: application/json;
 
 {
