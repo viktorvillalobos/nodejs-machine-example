@@ -15,3 +15,5 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: thisisademo
+    ports:
+      - "5432:5432"

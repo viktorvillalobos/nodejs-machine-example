@@ -3,35 +3,35 @@ import { InMemoryRepository } from "../machine"
 
 
 describe('Test InMemoryMachine Repository', () => {
-    it('getAll returns initial data', () => {
+    it('getAll returns initial data', async () => {
         const initialData = [
-            new Machine("Backhoe", 100, 0.20),
-            new Machine("Graders", 120, 0.30)
+            new Machine(1, "Backhoe", 100, 0.20),
+            new Machine(2, "Graders", 120, 0.30)
         ]
         const repository = new InMemoryRepository(initialData)
-        const response = repository.getAll()
+        const response = await repository.getAll()
 
         expect(response).toEqual(initialData)
     })
 
-    it('getAll returns an empty list when there arent initialData', () => {
+    it('getAll returns an empty list when there arent initialData', async () => {
         const repository = new InMemoryRepository()
-        const response = repository.getAll()
+        const response = await repository.getAll()
 
         expect(response).toEqual([])
     })
 
-    it('add sucessfully add a machine to the InMemoryTable', () => {
+    it('add sucessfully add a machine to the InMemoryTable', async () => {
         const repository = new InMemoryRepository()
-        const response = repository.getAll()
+        const response = await repository.getAll()
 
         // Now the table should be empty
         expect(response).toEqual([])
 
         // We add a new record
-        const newMachine = new Machine("Backhoe", 100, 0.20)
-        repository.add(newMachine)
-    
+        const newMachine = new Machine(3, "Backhoe", 100, 0.20)
+        await repository.add(newMachine)
+
         expect(response).toEqual([newMachine])
     })
 })

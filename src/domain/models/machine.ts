@@ -1,9 +1,11 @@
 class Machine {
+    id: number = null
     name: string
     price: number = 0
     markup: number = 0
 
-    constructor(name: string, price: number, markup: number) {
+    constructor(id: number = null, name: string, price: number, markup: number) {
+        this.id = id
         this.name = name
         this.price = price
         this.markup = markup

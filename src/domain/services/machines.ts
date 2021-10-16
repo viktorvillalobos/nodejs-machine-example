@@ -8,12 +8,12 @@ class MachineService {
         this.repository = repository
     }
 
-    getAll (): Machine[] {
+    async getAll (): Promise<Machine[]> {
         return this.repository.getAll()
     }
 
-    add (machine: Machine): Machine {
-        this.repository.add(machine)
+    async add (machine: Machine): Promise<Machine> {
+        await this.repository.add(machine)
         return machine
     }
 }
