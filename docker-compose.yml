@@ -2,13 +2,14 @@ version: '3'
 
 services:
   nodejs:
+    command: npm start
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
-      - .:/app/src
+      - ./src:/app/src
   
   db:
     image: postgres:13
@@ -17,3 +18,5 @@ services:
       POSTGRES_PASSWORD: thisisademo
     ports:
       - "5432:5432"
+    volumes:
+      - ./src/data/sql:/docker-entrypoint-initdb.d
