@@ -37,6 +37,14 @@ Or (GNU Tools are required)
 make up
 ```
 
+### Run tests
+
+This project only includes coverage for the Business Logic (Model, Repositories & Services), maybe I will add more coverage to endpoints, this is just an example
+
+
+```
+docker-compose run --rm nodejs npm run test
+```
 
 ## Specification
 
